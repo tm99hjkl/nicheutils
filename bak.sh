@@ -1,2 +1,7 @@
 #!/bin/bash
-cp $1 $1.bak
+files="$@"
+for f in $files; do
+    if [[ $f != *.bak ]]; then
+        cp -r $f.bak
+    fi
+done
